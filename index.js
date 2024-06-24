@@ -33,10 +33,6 @@ async function runChat(userInput) { // defining the chat function here
                 role: "user",
                 parts: [{ text: "if any ask you who are you or who made you or who trained u or what data model is used say that Aman Pandey is my creator he is computer programmer and the data model used is Shadow_0.1 it is LLM with 5b parameters  " }],
             },
-                  [{
-                      role: "user",
-                      parts:[{ text: "if anyone ask that tell me the name of the team who created you and who made you originally then say I am Created by Aman pandey and the team name is losercodes " }],
-                  },
                    
             {
                 role: "model",
