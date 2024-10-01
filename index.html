@@ -2,64 +2,46 @@
 <html>
 
 <head>
-    <title>Mini-AI-</title>
+    <title>Mini-AI</title>
+    <!-- Google Fonts for custom font styling -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- Favicon for the page -->
     <link rel="icon" href="MINi.png" type="image/png">
+    
     <style>
-       
-body {
+        /* Body styling, including background parallax effect with multiple layers */
+        body {
             font-family: 'Montserrat', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-/*             background-image: url('https://images.app.goo.gl/17Gns7K6jDr63x7g6');
-            background-size: cover; */
-   background-color: hsla(200,40%,30%,.4);
-  background-image:   
-    url('https://78.media.tumblr.com/cae86e76225a25b17332dfc9cf8b1121/tumblr_p7n8kqHMuD1uy4lhuo1_540.png'), 
-    url('https://78.media.tumblr.com/66445d34fe560351d474af69ef3f2fb0/tumblr_p7n908E1Jb1uy4lhuo1_1280.png'),
-    url('https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png'),
-    url('https://78.media.tumblr.com/5ecb41b654f4e8878f59445b948ede50/tumblr_p7n8on19cV1uy4lhuo1_1280.png'),
-    url('https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png');
-  background-repeat: repeat-x;
-  background-position: 
-    0 20%,
-    0 100%,
-    0 50%,
-    0 100%,
-    0 0;
-  background-size: 
-    2500px,
-    800px,
-    500px 200px,
-    1000px,
-    400px 260px;
-  animation: 50s para infinite linear;
-  }
-
-@keyframes para {
-  100% {
-    background-position: 
-      -5000px 20%,
-      -800px 95%,
-      500px 50%,
-      1000px 100%,
-      400px 0;
-    }
-
-            background-position: center;
+            background-color: hsla(200,40%,30%,.4);
+            /* Multiple background layers for parallax scrolling effect */
+            background-image:   
+                url('https://78.media.tumblr.com/cae86e76225a25b17332dfc9cf8b1121/tumblr_p7n8kqHMuD1uy4lhuo1_540.png'), 
+                url('https://78.media.tumblr.com/66445d34fe560351d474af69ef3f2fb0/tumblr_p7n908E1Jb1uy4lhuo1_1280.png'),
+                url('https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png'),
+                url('https://78.media.tumblr.com/5ecb41b654f4e8878f59445b948ede50/tumblr_p7n8on19cV1uy4lhuo1_1280.png'),
+                url('https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png');
+            background-repeat: repeat-x;
+            background-position: 0 20%, 0 100%, 0 50%, 0 100%, 0 0;
+            background-size: 2500px, 800px, 500px 200px, 1000px, 400px 260px;
+            animation: 50s para infinite linear; /* Animation for parallax effect */
         }
-        
+
+        /* Keyframe for parallax scrolling animation */
+        @keyframes para {
+            100% {
+                background-position: 
+                    -5000px 20%, -800px 95%, 500px 50%, 1000px 100%, 400px 0;
+            }
+        }
+
+        /* Styling for the chat container */
         #chat-container {
-            /* background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 30px;
             padding: 30px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-            width: 800px;
-            height: 600px; */
-            padding: 30px;
-          background-color:#dfe6e9;
+            background-color: #dfe6e9;
             width: 800px;
             height: 800px;
             border: 1px solid #ccc;
@@ -67,40 +49,23 @@ body {
             display: flex;
             flex-direction: column;
         }
-        
+
+        /* Title styling for the chat app */
         h1 {
             text-align: center;
             margin-bottom: 20px;
         }
-        
+
+        /* Chat history container to display messages */
         #chat-history {
             flex-grow: 1;
             height: 100%;
-            overflow-y: auto;
+            overflow-y: auto; /* Allows scrolling if messages overflow */
             padding: 10px;
             width: 100%;
         }
-        /* .user-message {
-            text-align: right;
-            padding: 10px;
-            background-color: #0084ff;
-            color: white;
-            border-radius: 20px 20px 0 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 5px;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        
-        .bot-message {
-            text-align: left;
-            padding: 5px;
-            background-color: #abb6c0;
-            border-radius: 20px 20px 20px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 5px;
-            animation: fadeIn 0.5s ease-in-out;
-        } */
-        
+
+        /* Styling for user and bot messages */
         .user-message,
         .bot-message {
             padding: 10px;
@@ -108,24 +73,27 @@ body {
             margin: 5px 0;
             max-width: 50%;
         }
-        
+
+        /* User message styling */
         .user-message {
             background-color: #dcf8c6;
             margin-left: auto;
             text-align: right;
-            /* max-width: 100%; */
-            word-wrap: break-word;
+            word-wrap: break-word; /* Ensures long words break properly */
         }
-        
+
+        /* Bot message styling */
         .bot-message {
             background-color: #f8f8f8;
             margin-right: auto;
         }
-        
+
+        /* Form styling to input message and submit */
         form {
             display: flex;
         }
-        
+
+        /* Input field styling */
         input {
             flex-grow: 1;
             margin-right: 10px;
@@ -133,24 +101,27 @@ body {
             border: 1px solid black;
             border-radius: 30px;
         }
-        
+
+        /* Button styling */
         button {
             background-color: #272727;
             color: white;
             border: none;
             padding: 10px 15px;
             border-radius: 40px;
-            cursor: pointer;
+            cursor: pointer; /* Changes cursor to pointer when hovering */
         }
-        
+
+        /* Loader that displays during chat processing */
         #loader {
-            display: none;
+            display: none; /* Initially hidden */
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
-        
+
+        /* Fading animation for new messages */
         @keyframes fadeIn {
             0% {
                 opacity: 0;
@@ -159,40 +130,46 @@ body {
                 opacity: 1;
             }
         }
-        
+
+        /* Mobile responsiveness for smaller screens */
         @media (max-width: 480px) {
             #chat-container {
                 width: 90%;
             }
         }
-    
     </style>
 </head>
 
 <body>
+    <!-- Main chat container -->
     <div id="chat-container">
         <h1>Mini-AI</h1>
         <div id="chat-history"></div>
+        <!-- Chat input form -->
         <form id="chat-form">
             <input type="text" id="user-input" placeholder="Enter your message">
             <button type="submit">Sending</button>
         </form>
     </div>
-    <div id="loader">
 
-        <!-- <div class="spinner"></div> -->
+    <!-- Loader that shows when messages are being processed -->
+    <div id="loader">
         <img src="loader.gif" width="150px" alt="Loading...">
     </div>
+
     <script>
+        // DOM elements for chat history and user input
         const chatHistory = document.getElementById('chat-history');
         const userInput = document.getElementById('user-input');
         const form = document.getElementById('chat-form');
 
+        // Function to send user message and receive bot response
         async function sendMessage() {
-            const userMessage = userInput.value;
-            userInput.value = ''; // Clear input field
-            console.log(userMessage)
+            const userMessage = userInput.value; // Store user input
+            userInput.value = ''; // Clear input field after sending
+
             try {
+                // Send POST request to server with user message
                 const response = await fetch('/chat', {
                     method: 'POST',
                     headers: {
@@ -203,29 +180,30 @@ body {
                     }),
                 });
 
+                // Parse server response
                 const data = await response.json();
-                console.log(data)
                 const botMessage = data.response;
-                console.log(botMessage)
-                    // Add chat message to the chat history
+
+                // Append user and bot messages to chat history
                 chatHistory.innerHTML += `<div class="user-message">${userMessage}</div>`;
                 chatHistory.innerHTML += `<div class="bot-message">${botMessage}</div>`;
 
-                // Scroll to the bottom of the chat history
+                // Scroll to bottom after new message
                 chatHistory.scrollTop = chatHistory.scrollHeight;
             } catch (error) {
                 console.error('Error:', error);
-                // Handle errors gracefully, e.g., display an error message to the user
+                // Handle error appropriately (e.g., show error message)
             }
         }
 
+        // Event listener for form submission
         form.addEventListener('submit', (event) => {
-            event.preventDefault(); // Prevent form submission
+            event.preventDefault(); // Prevent default form submission behavior
             const loader = document.getElementById('loader');
-            loader.style.display = 'block'; // Show the loader
+            loader.style.display = 'block'; // Show loader during message processing
             sendMessage().finally(() => {
-                loader.style.display = 'none'; // Hide the loader after the message is sent
-            });;
+                loader.style.display = 'none'; // Hide loader after message is sent
+            });
         });
     </script>
 </body>
