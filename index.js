@@ -45,7 +45,7 @@ async function runChat(userInput) {
             {
                 role: "model", // AI response to the above instruction
                 parts: [{ 
-                    text: "I am MINI_AI, a multitasking intelligent chatbot. I am here to assist you with any related for coding questions or information you may need." 
+                    text: "I am mini_ai, a multitasking intelligent chatbot. I am here to assist you with any related for coding questions or information you may need." 
                 }],
             },
             {
@@ -69,7 +69,7 @@ async function runChat(userInput) {
             {
                 role: "model", // AI accepting the new name and role
                 parts: [{ 
-                    text: "I like it! From now on, you can call me MINI_AI. I am here to assist you with any related questions or information you may need." 
+                    text: "I like it! From now on, you can call me mini_ai. I am here to assist you with any related questions or information you may need." 
                 }],
             }
         ],
@@ -85,7 +85,7 @@ async function runChat(userInput) {
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
-
+// for routing method
 // Serving the loading GIF image for the frontend
 app.get('/loader.gif', (req, res) => {
     res.sendFile(__dirname + '/loader.gif');
