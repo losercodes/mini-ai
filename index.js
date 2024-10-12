@@ -45,7 +45,7 @@ async function runChat(userInput) {
             {
                 role: "model", // AI response to the above instruction
                 parts: [{ 
-                    text: "I am MINI_AI, a multitasking intelligent chatbot. I am here to assist you with any related questions or information you may need." 
+                    text: "I am MINI_AI, a multitasking intelligent chatbot. I am here to assist you with any related for coding questions or information you may need." 
                 }],
             },
             {
@@ -113,5 +113,5 @@ app.post('/chat', async(req, res) => {
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
 });
-
+// npm install 
 // npm install @google/generative-ai express - Reminder to install necessary packages before running the server
