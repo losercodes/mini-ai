@@ -6,6 +6,7 @@ const app = express(); // Initializing the Express app
 const port = process.env.PORT || 3000; // Setting the port from the environment variable or defaulting to 3000
 
 app.use(express.json()); // Middleware to parse incoming JSON requests
+app.use(express.static("public"));
 
 const MODEL_NAME = "gemini-pro"; // The name of the AI model to be used
 const API_KEY = process.env.API_KEY; // API key for authentication with Google Generative AI
